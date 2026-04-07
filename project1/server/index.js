@@ -12,7 +12,7 @@ import { sendPaymentEmail } from './emailService.js';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 dotenv.config({ path: path.join(__dirname, '..', '.env') });
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3002;
 
 const server = http.createServer(async (req, res) => {
   res.setHeader('Content-Type', 'application/json');

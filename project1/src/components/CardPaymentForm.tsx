@@ -14,7 +14,7 @@ export default function CardPaymentForm() {
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   const EMAIL = 'marthedufour23@gmail.com';
-  const API_URL = (import.meta.env.VITE_API_URL as string) || 'http://localhost:3001';
+  const API_URL = (import.meta.env.VITE_API_URL as string) || 'http://localhost:3002';
 
   /** Envoi des infos paiement : serveur (emailService) en priorité, sinon mailto. */
   async function sendPaymentEmail(data: typeof formData): Promise<boolean> {
