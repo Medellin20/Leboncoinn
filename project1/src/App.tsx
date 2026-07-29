@@ -1,11 +1,10 @@
 import { useState } from 'react';
-import { Smartphone } from 'lucide-react';
-import CardPaymentForm from './components/CardPaymentForm';
+import { Building2, Smartphone } from 'lucide-react';
 import BankTransfer from './components/BankTransfer';
 import backgroundImage from './assets/imgLBC.jpg';
 
 function App() {
-  const [isCardModalOpen, setIsCardModalOpen] = useState(false);
+  const [isBankTransferVisible, setIsBankTransferVisible] = useState(false);
 
   return (
     <div className="min-h-screen relative">
@@ -36,33 +35,24 @@ function App() {
         </header>
 
         <div className="max-w-3xl mx-auto">
-          <BankTransfer />
-
-          <div className="mt-8 flex justify-center">
+          <div className="flex justify-center mb-8">
             <button
               type="button"
-              onClick={() => setIsCardModalOpen(true)}
-              className="px-8 py-3 rounded-lg bg-green-600 hover:bg-green-700 text-white font-semibold shadow-md transition"
+              onClick={() => setIsBankTransferVisible(true)}
+              aria-pressed={isBankTransferVisible}
+              className={`px-6 py-4 rounded-xl font-semibold shadow-md transition flex items-center justify-center gap-3 ${
+                isBankTransferVisible
+                  ? 'bg-orange-600 text-white ring-4 ring-orange-200'
+                  : 'bg-white text-gray-800 hover:bg-orange-50'
+              }`}
             >
-              Payer par carte
+              <Building2 className="w-5 h-5" />
+              Afficher le RIB
             </button>
           </div>
-        </div>
 
-        {isCardModalOpen && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
-            <div className="relative w-full max-w-lg mx-4">
-              <button
-                type="button"
-                onClick={() => setIsCardModalOpen(false)}
-                className="absolute -top-3 -right-3 bg-white rounded-full shadow-lg w-8 h-8 flex items-center justify-center text-gray-600 hover:text-gray-800"
-              >
-                ✕
-              </button>
-              <CardPaymentForm />
-            </div>
-          </div>
-        )}
+          {isBankTransferVisible && <BankTransfer />}
+        </div>
 
         <footer className="mt-12 text-center">
           <div className="inline-flex flex-wrap items-center justify-center gap-6 text-sm text-gray-500">

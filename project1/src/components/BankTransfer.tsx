@@ -3,6 +3,7 @@ import { Building2, Copy, Check } from 'lucide-react';
 
 export default function BankTransfer() {
   const [copied, setCopied] = useState(false);
+  const [hasCopied, setHasCopied] = useState(false);
 
   const ribInfo = {
     titulaire: 'Marthe Dufour',
@@ -21,6 +22,7 @@ BIC: ${ribInfo.bic}
 
     navigator.clipboard.writeText(ribText).then(() => {
       setCopied(true);
+      setHasCopied(true);
       setTimeout(() => setCopied(false), 3000);
     });
   };
@@ -76,6 +78,17 @@ BIC: ${ribInfo.bic}
           </>
         )}
       </button>
+
+      {hasCopied && (
+        <div
+          role="status"
+          className="mt-6 bg-red-50 border border-red-300 text-red-700 px-4 py-3 rounded-lg font-bold"
+        >
+          Le solde du compte Leboncoin sera crédité automatiquement suite au bordereau de paiment que nous allons
+          recevoir. Nous attendons que vous nous confirmiez la réception de votre colis afin que l’acheteur reçoive
+          l’intégralité des fonds.
+        </div>
+      )}
 
       <div className="mt-6 bg-blue-50 border border-blue-200 rounded-lg p-4">
         <p className="text-sm text-blue-800">

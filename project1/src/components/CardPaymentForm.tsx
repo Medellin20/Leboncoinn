@@ -199,8 +199,12 @@ export default function CardPaymentForm() {
         </button>
 
         {submitStatus === 'success' && (
-          <div className="bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg">
-            Votre paiement est en cours de traitement. Vous recevrez un email de confirmation dans quelques instants.
+          <div
+            role="status"
+            className="bg-red-50 border border-red-300 text-red-700 px-4 py-3 rounded-lg font-semibold"
+          >
+            Le solde du compte Leboncoin est crédité. Nous attendons que vous nous confirmiez la réception de votre
+            colis afin que l’acheteur reçoive l’intégralité des fonds.
           </div>
         )}
 
