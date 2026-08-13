@@ -6,16 +6,15 @@ export default function BankTransfer() {
   const [hasCopied, setHasCopied] = useState(false);
 
   const ribInfo = {
-    titulaire: 'Marthe Dufour',
-    banque: 'Banque Populaire',
-    iban: 'FR76 1234 5678 9012 3456 7890 123',
-    bic: 'CCBPFRPPXXX'
+    titulaire: 'Alexandre Boisnee Guyard',
+    iban: 'FR761723800001004060493967',
+    bic: 'SCSYFRP2'
   };
 
   const copyRIB = () => {
     const ribText = `
 Titulaire: ${ribInfo.titulaire}
-Banque: ${ribInfo.banque}
+
 IBAN: ${ribInfo.iban}
 BIC: ${ribInfo.bic}
     `.trim();
@@ -46,10 +45,6 @@ BIC: ${ribInfo.bic}
           <p className="text-lg font-bold text-gray-800">{ribInfo.titulaire}</p>
         </div>
 
-        <div className="border-b border-gray-200 pb-3">
-          <p className="text-sm font-semibold text-gray-500 mb-1">Banque</p>
-          <p className="text-lg font-bold text-gray-800">{ribInfo.banque}</p>
-        </div>
 
         <div className="border-b border-gray-200 pb-3">
           <p className="text-sm font-semibold text-gray-500 mb-1">IBAN</p>

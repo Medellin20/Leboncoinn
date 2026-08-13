@@ -1,0 +1,144 @@
+# .gitignore — generated to ignore common OS, editor, build, dependency, and secret files
+# Add or remove entries as needed for this project's tech stack
+
+# Operating system
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-lock.yaml
+package-lock.json
+.pnp/
+.pnp.js
+.npmrc
+
+# Build outputs
+dist/
+build/
+.out/
+coverage/
+coverage.*
+.nyc_output/
+*.map
+
+# Static site / frameworks
+.next/
+.nuxt/
+.public/
+.astro/
+\.vercel/
+.vercel_build_output
+.svelte-kit/
+.cache/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+.tox/
+venv/
+.env
+.env.*
+.venv/
+Pipfile.lock
+pip-wheel-metadata/
+.mypy_cache/
+.ruff_cache/
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+target/
+bin/
+out/
+*.iml
+.idea/
+.gradle/
+
+# Go
+/bin/
+/pkg/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Ruby
+*.gem
+*.rbc
+.bundle/
+vendor/bundle/
+
+# PHP / Composer
+/vendor/
+composer.lock
+
+# JavaScript/TypeScript tool caches
+.cache/
+*.tsbuildinfo
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+
+# Environment / secrets
+.env
+.env.local
+.env.*.local
+secrets.yml
+credentials.json
+*.pem
+*.key
+
+# IDEs and editors
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.code-workspace
+*.swp
+*.swo
+
+# macOS
+.AppleDouble
+.LSOverride
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+
+# Docker
+docker-compose.override.yml
+.env.docker
+.docker/
+
+# Misc
+*.lock
+*.sqlite3
+*.log
+*.bak
+*.orig
+
+# JetBrains
+.idea/
+*.iml
+out/
+
+# Lockfiles for other package managers (optional)
+pnpm-lock.yaml
+
+# End of file
